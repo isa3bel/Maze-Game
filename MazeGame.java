@@ -278,9 +278,6 @@ class MazeWorld extends World {
       this.time = this.time - this.tickRate;
       this.timeLeft.text = "Time left " + (int) this.time;
     }
-    if (this.time == 0 && p.on != this.board.get(boardSizeY - 1).get(boardSizeX - 1)) {
-      this.scene.placeImageXY(lost, boardSizeX * CELL_SIZE / 2, boardSizeY * CELL_SIZE / 2);
-    }
     // Places the winning text when the maze is solved
     if (p.on == this.board.get(boardSizeY - 1).get(boardSizeX - 1)) {
       this.scene.placeImageXY(won, boardSizeX * CELL_SIZE / 2, boardSizeY * CELL_SIZE / 2);
@@ -643,7 +640,7 @@ class Graph {
 
 //Examples and tests
 class ExamplesMazeGame {
-  MazeWorld RunGame = new MazeWorld(50, 30);
+  MazeWorld RunGame = new MazeWorld(10, 10);
 
   Graph g = new Graph();
 
